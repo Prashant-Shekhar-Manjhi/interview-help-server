@@ -27,7 +27,7 @@ exports.signUp = async (req, res)=>{
         })
     }catch(err){
         res.status(501).json({
-            message:"failure",
+            status:"failure",
             error: err
         })
     }
