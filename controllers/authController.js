@@ -21,9 +21,8 @@ exports.signUp = async (req, res)=>{
 
         res.status(201).json({
             message:"success",
-            token,
             data:{
-                user:newUser
+                user:{...newUser._doc, token}
             }
         })
     }catch(err){
@@ -57,7 +56,9 @@ exports.logIn = async (req, res)=>{
             }else{
                 res.status(200).json({
                     status:"Success",
-                    token,
+                    data : {
+                       user :{...user._doc, token}
+                    }
                 })
             }
            
