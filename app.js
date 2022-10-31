@@ -7,6 +7,9 @@ const cors = require('cors')
 const userRouter = require('./routes/userRoutes');
 const experienceRouter = require('./routes/experienceRoutes');
 const messageRouter = require("./routes/messageRoutes");
+const companyRouter = require("./routes/companyRoute");
+const courseRouter = require("./routes/courseRoute");
+const contentRouter = require("./routes/contentRoute");
 
 // middile ware...
 app.use(cors());
@@ -18,5 +21,8 @@ app.use(morgan('dev'));
 app.use('/api/users',userRouter);
 app.use("/api/experience", experienceRouter);
 app.use("/api/message", messageRouter);
+app.use("/api/company", companyRouter);
+app.use("/api/course", courseRouter);
+app.use("/api/content", contentRouter);
 
 module.exports = app;
