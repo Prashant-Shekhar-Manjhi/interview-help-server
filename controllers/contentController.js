@@ -43,7 +43,7 @@ exports.showContents = async (req, res)=>{
 // fetch content by id....
 exports.showContentById = async (req,res)=>{
     try{
-        const content = await Content.findById(req.params.id);
+        const content = await Content.find({course_id : req.params.id});
         res.status(200).json({
             status:"success",
             data:{

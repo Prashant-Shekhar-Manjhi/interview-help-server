@@ -8,6 +8,10 @@ const courseSchema = mongoose.Schema({
     },
     description:{
         type:String
+    },
+    pdfLink:{
+        type:Array,
+        default:[]
     }
 });
 

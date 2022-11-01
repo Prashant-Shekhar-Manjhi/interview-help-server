@@ -10,7 +10,7 @@ exports.addExperince = async (req, res)=>{
             role:req.body.role,
             description: req.body.description
         });
-
+        console.log(newExperience.description);
         res.status(200).json({
             status: "success",
             message : "Your experience is successfully posted!"

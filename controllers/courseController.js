@@ -38,10 +38,7 @@ exports.getCourseById = async (req, res)=>{
 
 exports.addCourse = async (req, res)=>{
     try{
-        const newCourse = await Course.create({
-            name:req.body.name,
-            description:req.body.description
-        });
+        const newCourse = await Course.create(req.body);
 
         res.status(200).json({
             status:"success",
