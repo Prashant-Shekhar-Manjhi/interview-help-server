@@ -1,13 +1,11 @@
 const Company = require("./../models/companyModel");
 
-exports.getCompany = async (req, res)=>{
+exports.getCompanies = async (req, res)=>{
     try{
-        const company = await Company.findById(req.body.id);
+        const companies = await Company.find({});
         res.status(200).json({
             status:"success",
-            data:{
-                company
-            }
+            companies
         })
     }catch(err){
         res.status(404).json({
@@ -27,6 +25,20 @@ exports.addCompany = async (req, res)=>{
             data:{
                 company
             }
+        })
+    }catch(err){
+        res.status(404).json({
+            status:"failure"
+        })
+    }
+}
+
+exports.getCompanyById = async (req, res)=>{
+    try{
+        const company = await Company.findById(req.params.id);
+        res.status(200).json({
+            status:"success",
+            company
         })
     }catch(err){
         res.status(404).json({

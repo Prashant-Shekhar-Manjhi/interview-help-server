@@ -9,7 +9,7 @@ const experienceSchema = mongoose.Schema({
         type: String,
         required:true,
     },
-    company:{
+    company_id:{
         type: String,
         required: true
     },

@@ -6,7 +6,7 @@ exports.addExperince = async (req, res)=>{
         const newExperience = await Experience.create({
             user_id : req.body.user_id,
             name : req.body.name,
-            company: req.body.company.toLowerCase(),
+            company_id: req.body.company_id,
             role:req.body.role,
             description: req.body.description
         });
@@ -26,9 +26,9 @@ exports.addExperince = async (req, res)=>{
 
 // show all experiences sorted by companies...
 
-exports.getExperienceByCompany = async (req, res)=>{
+exports.getExperienceByCompanyId = async (req, res)=>{
     try{const experiences = await Experience.find({
-        company : req.params.company.toLowerCase()
+        company_id : req.params.company_id
     })
 
     res.status(200).json({
