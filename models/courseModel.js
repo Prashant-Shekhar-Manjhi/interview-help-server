@@ -1,5 +1,13 @@
 const mongoose = require('mongoose')
 
+const pdfSchema = mongoose.Schema({
+    pdf_name:{
+        type:String,
+    },
+    link:{
+        type:String
+    }
+})
 const courseSchema = mongoose.Schema({
     name:{
         type:String,
@@ -9,10 +17,7 @@ const courseSchema = mongoose.Schema({
     description:{
         type:String
     },
-    pdfLink:{
-        type:Array,
-        default:[]
-    }
+    pdfLinks:[pdfSchema]
 });
 
 const Course = mongoose.model("Courses", courseSchema);

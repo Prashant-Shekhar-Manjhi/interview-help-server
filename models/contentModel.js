@@ -11,6 +11,15 @@ const subtopics = mongoose.Schema({
     }
 })
 
+const pdfSchema = mongoose.Schema({
+    pdf_name:{
+        type:String,
+    },
+    link:{
+        type:String
+    }
+})
+
 const contentSchema = mongoose.Schema({
     course_id:{
         type:String,
@@ -26,10 +35,7 @@ const contentSchema = mongoose.Schema({
         required:true,
     },
     subtopics:[subtopics],
-    pdfLinks:{
-        type:Array,
-        default:[]
-    }
+    pdfLinks:[pdfSchema]
 })
 
 const Content = mongoose.model("contents", contentSchema);

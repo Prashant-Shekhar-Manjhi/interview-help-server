@@ -14,7 +14,11 @@ const experienceSchema = mongoose.Schema({
         required: true
     },
     role:String,
-    description:String
+    description:String,
+    isApproved:{
+        type:Boolean,
+        default:false
+    }
 });
 
 // model using schema,

@@ -3,14 +3,8 @@ const Experience = require('./../models/experienceModels');
 
 exports.addExperince = async (req, res)=>{
     try{
-        const newExperience = await Experience.create({
-            user_id : req.body.user_id,
-            name : req.body.name,
-            company_id: req.body.company_id,
-            role:req.body.role,
-            description: req.body.description
-        });
-        console.log(newExperience.description);
+        const newExperience = await Experience.create(req.body);
+        // console.log(newExperience.description);
         res.status(200).json({
             status: "success",
             message : "Your experience is successfully posted!"
