@@ -2,12 +2,12 @@
   "name": "interview.help-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
-  "author": "",
+  "author": "Group no - 31",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

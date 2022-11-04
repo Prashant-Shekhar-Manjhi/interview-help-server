@@ -28,7 +28,6 @@ const contentSchema = mongoose.Schema({
     topic:{
         type:String,
         required:true,
-        unique:true
     },
     introduction:{
         type:String,
