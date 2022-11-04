@@ -22,8 +22,6 @@ exports.addCompany = async (req, res)=>{
         })
         res.status(200).json({
             status:"success",
-            company
-
         })
     }catch(err){
         res.status(404).json({
